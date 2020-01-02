@@ -1,0 +1,6 @@
+;FACTORIAL OF A NUMBER
+
+.model small
+ASSUME CS:CODE,DS:CODE
+
+

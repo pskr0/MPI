@@ -1,0 +1,15 @@
+.model small
+assume CS:CODE DS:DATA
+DATA SEGMENT
+    DATA ENDS
+CODE SEGMENT
+    MOV AL,01H
+    XOR CX,CX
+    XOR BX,BX
+    MOV CX,05H
+    LABEL1:MUL CL
+    LOOP LABEL1
+    INT 21H
+    CODE ENDS
+    
+

@@ -1,0 +1,24 @@
+.model small
+assume CS:CODE DS:DATA
+DATA SEGMENT
+    ;MSG DB 'Number of Ones$'
+    OP DB '# OF IS 'DL'$'
+DATA ENDS
+
+CODE SEGMENT
+    MOV AX,DATA
+    MOV DS,AX
+    MOV AL,07H
+    XOR BL,BL
+    XOR CX,CX
+    MOV CX,8
+    LABEL1:SHR AL,1
+    JNC LABEL2
+    INC BL
+    MOV DL,BL
+    ADD DL,48  
+    MOV DL,OFFSET OP
+    MOV AH,09H
+    INT 21H  
+LABEL2:LOOP LABEL1  
+CODE ENDS
